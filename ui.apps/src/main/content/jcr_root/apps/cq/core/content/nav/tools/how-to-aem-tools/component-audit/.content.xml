@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Component Usage Audit Manager"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Component Usage Audit Module"
+    href="/content/component-audit-manager.html"
+    icon="report"
+    id="component-usage-audit -module"
+    target="_blank"/>

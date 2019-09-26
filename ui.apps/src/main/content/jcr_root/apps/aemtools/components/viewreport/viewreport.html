@@ -1,0 +1,37 @@
+<sly data-sly-use.viewreportsmodel="${'com.adobe.aemtools.core.models.ViewReportsModel'}" 
+   data-sly-use.reportresults="aemtools/components/table/table.html">
+   <sly data-sly-test="${viewreportsmodel.reportview =='Tabs'}">
+      <coral-tabview  size="L" orientation="vertical">
+         <coral-tablist target="coral-demo-panel-1">
+            <sly data-sly-list="${viewreportsmodel.list}">
+               <coral-tab><b>${item.name}(${item.usage}) </b></coral-tab>
+            </sly>
+         </coral-tablist>
+         <coral-panelstack id="datatable-jquery">
+            <coral-panel class="coral-Well"  data-sly-repeat="${viewreportsmodel.list}">
+               <sly data-sly-use.table="${'com.adobe.aemtools.core.models.ViewReportsModel'@ componentpath=item.path}">
+                  <sly data-sly-test.resources="${table.resources}"/>
+                  <div class="component-intro">
+                     <b>Component Name</b>    - ${item.name}
+                     </br> <b>Component Path</b> - ${item.path}
+                  </div>
+                  <div data-sly-call="${reportresults.reportresults @ resources=resources}"></div>
+               </sly>
+            </coral-panel>
+         </coral-panelstack>
+      </coral-tabview>
+   </sly>
+   <sly data-sly-test="${viewreportsmodel.reportview =='Accordion'}">
+      <coral-accordion >
+         <coral-accordion-item data-sly-repeat="${viewreportsmodel.list}">
+            <coral-accordion-item-label>${item.name}(${item.usage})</coral-accordion-item-label>
+            <coral-accordion-item-content>
+               <sly data-sly-use.table="${'com.adobe.aemtools.core.models.ViewReportsModel'@ componentpath=item.path}">
+                  <sly data-sly-test.resources="${table.resources}"/>
+                  <div data-sly-call="${reportresults.reportresults @ resources=resources}"></div>
+               </sly>
+            </coral-accordion-item-content>
+         </coral-accordion-item>
+      </coral-accordion>
+   </sly>
+</sly>
