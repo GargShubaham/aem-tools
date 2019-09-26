@@ -1,5 +1,0 @@
-#base=js
-highcharts.js
-highcharts-3d.js
-exporting.js
-export-data.js
