@@ -1,0 +1,38 @@
+coral-tabview[orientation="vertical"] > coral-tablist {
+    overflow-y: auto;
+    height: 700px;
+}
+.zoom {
+  padding: 50px;
+
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(2.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.coral3-TabList--vertical .coral3-Tab {
+    text-align: left;
+}
+
+
+.green-header-footer thead {
+    background-color: #008010cc;
+}
+.green-header-footer tfoot {
+    background-color: #008010cc;
+}
+
+span.red {
+    color:  #dc3545;
+}
+div#checkbox-no-children {
+    margin-top: 30px;
+}
+
+.component-intro {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,5 @@
+#base=js
+delete-reports.js
+piechart.js
+report-table.js
+create-report.js
