@@ -1,5 +1,5 @@
 $(function () {
-	var t = $('.component-usage-report-viewer-table').DataTable({
+	 $('.component-usage-report-viewer-table').DataTable({
 
 		"lengthMenu": [
 			[-1, 10, 50, 100, 250, 500],

@@ -14,10 +14,6 @@ $(function () {
 	var DELETE_SUCCESS_CONTENT = "Selected reports has been deleted.";
 	var DELETE_SUCCESS_FOOTER = "";
 
-	var DELETE_FAILURE_VARIANT = "error";
-	var DELETE_FAILURE_HEADER = "ERROR";
-	var DELETE_FAILURE_CONTENT = "An unepected error has occured. Please try again.";
-	var DELETE_FAILURE_FOOTER = "";
 
 	var dialog = document.querySelector('#report-lister-dialog');
 	if (dialog) {
@@ -92,7 +88,7 @@ $(function () {
 
 	function reload() {
 		location.reload();
-	};
+	}
 
 
 });
