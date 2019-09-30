@@ -42,4 +42,4 @@ Or to deploy only the bundle to the author, run
 ## Compatibilty
 Developer on AEM 6.5.
 Tested and working fine on AEM 6.5 and 6.4.
-If you need it for lesser vesion. Make changes in POM accordingly or let me know by raising an issue :).
+If you need it for lesser version. Make changes in POM accordingly or let me know by raising an issue :).
