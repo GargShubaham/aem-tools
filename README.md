@@ -37,7 +37,7 @@ Or to deploy only the bundle to the author, run
     mvn clean install -PautoInstallBundle
 
 ## Alternatively, Install package directly
-    [aemtools.component.usage.audit.manager-1.0-SNAPSHOT.zip](https://github.com/GargShubaham/aem-tools/files/3669161/aemtools.component.usage.audit.manager-1.0-SNAPSHOT.zip)
+    https://github.com/GargShubaham/aem-tools/files/3669161/aemtools.component.usage.audit.manager-1.0-SNAPSHOT.zip
 
 ## Compatibilty
 Developer on AEM 6.5.
