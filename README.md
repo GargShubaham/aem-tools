@@ -40,6 +40,6 @@ Or to deploy only the bundle to the author, run
     https://github.com/GargShubaham/aem-tools/files/3669161/aemtools.component.usage.audit.manager-1.0-SNAPSHOT.zip
 
 ## Compatibilty
-Developer on AEM 6.5.
-Tested and working fine on AEM 6.5 and 6.4.
+Developed on AEM 6.5.
+Compatible with AEM 6.5 and 6.4.
 If you need it for lesser version. Make changes in POM accordingly or let me know by raising an issue.
