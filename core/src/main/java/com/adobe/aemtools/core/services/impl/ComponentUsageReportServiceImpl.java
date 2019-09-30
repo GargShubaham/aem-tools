@@ -27,6 +27,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The type Component usage report service.
+ */
 @Component(service = { ComponentUsageReportService.class })
 @Designate(ocd = ComponentUsageReportConfig.class)
 @ServiceDescription("Component Usage Report service")
@@ -112,13 +115,10 @@ public class ComponentUsageReportServiceImpl implements ComponentUsageReportServ
                     map.put("group." + itemNumber + "_group.p.and", "true");
                 }
                 else{
-
                     map.put("group." + itemNumber + "_path", paths[i]);
                 }
             }
-
-                map.put("group.p.or", "true");
-
+            map.put("group.p.or", "true");
             map.put("1_property", ResourceResolver.PROPERTY_RESOURCE_TYPE);
             map.put("1_property.value", componentPath);
             map.put("p.limit", "-1");
@@ -151,10 +151,7 @@ public class ComponentUsageReportServiceImpl implements ComponentUsageReportServ
                     map.put("group."+itemNumber+"_path", conditions.get(i));
                 }
             }
-
             map.put("group.p.or", "true");
-
-
             map.put("property", ResourceResolver.PROPERTY_RESOURCE_TYPE);
             map.put("property.operation", "exists");
             map.put("p.limit", "-1");

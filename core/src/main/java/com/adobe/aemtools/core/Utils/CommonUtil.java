@@ -11,6 +11,10 @@ import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
+/**
+ * The type Common util.
+ * This Util class provide commons method which are of general use.
+ */
 public class CommonUtil {
     private final static Logger logger = LoggerFactory.getLogger(CommonUtil.class);
 
@@ -18,6 +22,13 @@ public class CommonUtil {
 
     }
 
+    /**
+     * Get component title string.
+     *
+     * @param path             the path
+     * @param resourceResolver the resource resolver
+     * @return the string
+     */
     public static  String getComponentTitle(String path, ResourceResolver resourceResolver){
        String title = null;
        try{
@@ -33,9 +44,22 @@ public class CommonUtil {
         return getStringAfterLastSlash(path);
     }
 
+    /**
+     * Get string after last slash string.
+     *
+     * @param path the path
+     * @return the string
+     */
     public  static String getStringAfterLastSlash (String path){
         return path != null ? path.substring(path.lastIndexOf('/') + 1) : path;
     }
+
+    /**
+     * Get string array string [ ].
+     *
+     * @param list the list
+     * @return the string [ ]
+     */
     public static  String[] getStringArray(List<String> list)
     {
         String[] str =null;
@@ -48,10 +72,16 @@ public class CommonUtil {
             return str;
         } catch (Exception e) {
 
-            logger.error("Exception in getCurrentDate method.",e);
+            logger.error("Exception in getStringArray method.",e);
         }
         return  str;
     }
+
+    /**
+     * Gets current date.
+     *
+     * @return the current date
+     */
     public static Calendar getCurrentDate() {
         Calendar cal = Calendar.getInstance();
         try{
@@ -64,6 +94,15 @@ public class CommonUtil {
         }
         return cal;
     }
+
+    /**
+     * Populate parameter list list .
+     *
+     * @param params          the params
+     * @param parameterName   the parameter name
+     * @param parameterValues the parameter values
+     * @return the list
+     */
     public static  List < String > populateParameterList(final RequestParameterMap params, final String parameterName, List < String > parameterValues) {
         try{
             if (parameterValues == null) {
@@ -86,6 +125,13 @@ public class CommonUtil {
         return parameterValues;
     }
 
+    /**
+     * Exclude children pages boolean.
+     *
+     * @param params        the params
+     * @param parameterName the parameter name
+     * @return the boolean
+     */
     public static boolean excludeChildrenPages(final RequestParameterMap params,String parameterName){
         try {
             if (params.containsKey((Object)parameterName )) {

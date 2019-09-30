@@ -21,6 +21,9 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.*;
 
+/**
+ * The type View reports model.
+ */
 @Model(adaptables =  { Resource.class, SlingHttpServletRequest.class })
 public class ViewReportsModel {
 
@@ -35,15 +38,31 @@ public class ViewReportsModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
+    /**
+     * The Request.
+     */
     @Inject
     SlingHttpServletRequest request;
 
     @OSGiService
     private ComponentUsageReportService componentUsageReportService;
 
+    /**
+     * The Paths.
+     */
     String[] paths = null;
+    /**
+     * The Page path.
+     */
     String   pagePath = null;
+    /**
+     * The Exclude children pages.
+     */
     boolean excludeChildrenPages=false;
+
+    /**
+     * Init.
+     */
     @PostConstruct
     protected void init() {
          try {
@@ -61,11 +80,21 @@ public class ViewReportsModel {
 
     }
 
+    /**
+     * Gets reportview.
+     *
+     * @return the reportview
+     */
     public String getReportview() {
 
         return componentUsageReportService.getReportView();
     }
 
+    /**
+     * Gets list.
+     *
+     * @return the list
+     */
     public List<HashMap<String,String>> getList() {
         List<HashMap<String,String>> list = new ArrayList<>();
         try {
@@ -89,11 +118,21 @@ public class ViewReportsModel {
         return  list;
     }
 
+    /**
+     * Gets resources.
+     *
+     * @return the resources
+     */
     public Iterator<Resource> getResources() {
 
         return componentUsageReportService.getNodesComponentUsedAt(componentpath,resourceResolver,paths,excludeChildrenPages);
     }
 
+    /**
+     * Gets page map.
+     *
+     * @return the page map
+     */
     public Map<String,String> getPageMap() {
          Map<String, String> myHashMap = new HashMap<>();
          try{

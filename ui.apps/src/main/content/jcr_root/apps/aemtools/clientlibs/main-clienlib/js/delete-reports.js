@@ -10,7 +10,7 @@ $(function () {
 	var CONFIRM_DELETE_ALERT_FOOTER = '<button id="cancelButton" is="coral-button" variant="default" coral-close>Cancel</button><button id="acceptButton" is="coral-button" variant="primary">Yes</button>';
 
 	var DELETE_SUCCESS_VARIANT = "success";
-	var DELETE_SUCCESS_HEADER = "Sucess";
+	var DELETE_SUCCESS_HEADER = "Success";
 	var DELETE_SUCCESS_CONTENT = "Selected reports has been deleted.";
 	var DELETE_SUCCESS_FOOTER = "";
 

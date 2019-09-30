@@ -12,6 +12,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Iterator;
 
+/**
+ * The type Report lister model.
+ */
 @Model(adaptables =  { Resource.class, SlingHttpServletRequest.class })
 public class ReportListerModel {
 
@@ -20,9 +23,17 @@ public class ReportListerModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
+    /**
+     * The Component usage report service.
+     */
     @OSGiService
     ComponentUsageReportService componentUsageReportService;
 
+    /**
+     * Gets all reports.
+     *
+     * @return the all reports
+     */
     public Iterator<Resource> getAllReports() {
         Iterator<Resource> reports =null;
 
@@ -36,6 +47,12 @@ public class ReportListerModel {
 
         return reports;
     }
+
+    /**
+     * Get tool path string.
+     *
+     * @return the string
+     */
     public String getToolPath(){
        return componentUsageReportService.toolPath();
     }

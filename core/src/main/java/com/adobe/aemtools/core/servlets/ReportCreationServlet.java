@@ -17,6 +17,10 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.Servlet;
 import java.io.IOException;
 
+/**
+ * The type Report creation servlet.
+ * Servlet handles various AJAX calls and form submission.
+ */
 @Component(service = {Servlet.class}, property = {org.osgi.framework.Constants.SERVICE_DESCRIPTION + "=Report Creation Servlet",
         "sling.servlet.methods=" + HttpConstants.METHOD_GET,
         "sling.servlet.resourceTypes=" + "granite/ui/components/coral/foundation/page",
@@ -47,12 +51,11 @@ public class ReportCreationServlet extends SlingAllMethodsServlet {
                 componentUsageReportCreationService.searchComponents(request, response, params);
             }
             else if (params.containsKey(Constants.DELETE_REPORTS_PARAMETER)) {
-                logger.trace("Delete reports.");
+                logger.trace("Deleting Reports.");
                 deleteReportsService.doDelete(request, response, params);
             }
             else if (!params.containsKey(Constants.DELETE_REPORTS_PARAMETER) && !params.containsKey(Constants.CREATIONWIZARD_GET_USED_COMPONENT_LIST) ){
                 logger.trace("Submitting report creation form.");
-                request.removeAttribute("dtBasicExample_length");
                 componentUsageReportCreationService.submitReportCreationForm(request, response);
             }
         }

@@ -1,11 +1,10 @@
 package com.adobe.aemtools.core.services.impl;
 
+import com.adobe.aemtools.core.Utils.CommonUtil;
 import com.adobe.aemtools.core.constants.Constants;
 import com.adobe.aemtools.core.services.DeleteReportsService;
-import org.apache.commons.lang.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
-import org.apache.sling.api.request.RequestParameter;
 import org.apache.sling.api.request.RequestParameterMap;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.service.component.annotations.Component;
@@ -17,9 +16,11 @@ import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.Session;
-import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type Delete reports service.
+ */
 @Component(service = { DeleteReportsService.class })
 @ServiceDescription("Report deletion service")
 @ServiceRanking(1001)
@@ -34,7 +35,7 @@ public class DeleteReportsServiceImpl implements DeleteReportsService {
             ResourceResolver resourceResolver = request.getResourceResolver();
             Session session = resourceResolver.adaptTo(Session.class);
             List < String > deletePaths = null;
-            deletePaths = populateParameterList(params, Constants.DELETE_REPORTS_PATH, deletePaths);
+            deletePaths = CommonUtil.populateParameterList(params, Constants.DELETE_REPORTS_PATH, deletePaths);
             for (String path : deletePaths) {
                 deletePath(path,session);
             }
@@ -59,26 +60,5 @@ public class DeleteReportsServiceImpl implements DeleteReportsService {
         }
     }
 
-    private List< String > populateParameterList(final RequestParameterMap params, final String parameterName, List < String > parameterValues) {
-        try{
-            if (parameterValues == null) {
-                parameterValues = new ArrayList<>();
-            }
-            if (params.containsKey((Object) parameterName)) {
-                final RequestParameter[] values =params.getValues(parameterName);
-
-                for (final RequestParameter cond: values) {
-                    if (StringUtils.isNotBlank(cond.getString())) {
-                        parameterValues.add(cond.getString());
-                    }
-                }
-            }
-            return parameterValues;
-        } catch (Exception e) {
-
-            logger.error("Exception in populateParameterList method.",e);
-        }
-        return parameterValues;
-    }
 
 }

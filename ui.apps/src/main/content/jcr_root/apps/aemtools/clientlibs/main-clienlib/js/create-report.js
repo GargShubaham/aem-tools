@@ -47,8 +47,6 @@ $(function () {
 
 
 		if ($("input[name=" + REPORT_PATHS + "]").val()) {
-
-			//var wait = getLoader();
             wait.show();
 
 
@@ -71,17 +69,10 @@ $(function () {
 
 				success: function (result) {
 					wait.hide();
-
-
 					var obj = jQuery.parseJSON(result);
-
 					$.each(obj, function (key, value) {
-
-
 						buildTable(value.JCR_TITLE, value.COMPONENT_USAGE, value.COMPONENT_FULL_PATH, value.JCR_COMPONENT_GROUP, value.JCR_DESCRIPTION, value.JCR_CREATEDBY, value.JCR_CREATED, table, value.COMPONENT_RESOURCETYPE);
 					});
-
-
 				}
 			});
 
@@ -102,7 +93,6 @@ $(function () {
 				'',
 				JCR_TITLE,
 				'<span class="red"> ' + COMPONENT_USAGE + '</span>',
-				//'<a href=' + COMPONENT_RESOURCETYPE + '> ' + COMPONENT_RESOURCETYPE + '</a>',
                 COMPONENT_RESOURCETYPE,
 				JCR_COMPONENT_GROUP,
 				JCR_DESCRIPTION,

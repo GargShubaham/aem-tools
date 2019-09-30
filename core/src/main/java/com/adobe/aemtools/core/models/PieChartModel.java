@@ -18,6 +18,9 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+/**
+ * The type Pie chart model.
+ */
 @Model(adaptables =  { Resource.class, SlingHttpServletRequest.class })
 public class PieChartModel {
 
@@ -26,14 +29,27 @@ public class PieChartModel {
     @SlingObject
     private ResourceResolver resourceResolver;
 
+    /**
+     * The Request.
+     */
     @Inject
     SlingHttpServletRequest request;
 
     @OSGiService
     private ComponentUsageReportService componentUsageReportService;
 
+    /**
+     * The Paths.
+     */
     String[] paths = null;
+    /**
+     * The Exclude children pages.
+     */
     boolean excludeChildrenPages=false;
+
+    /**
+     * Init.
+     */
     @PostConstruct
     protected void init() {
         try {
@@ -50,6 +66,11 @@ public class PieChartModel {
         }
     }
 
+    /**
+     * Gets pie chart json.
+     *
+     * @return the pie chart json
+     */
     public String getPieChartJson() {
         JsonArray array = new JsonArray();
         try {

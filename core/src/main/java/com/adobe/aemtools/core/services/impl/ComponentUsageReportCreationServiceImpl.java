@@ -143,9 +143,6 @@ public class ComponentUsageReportCreationServiceImpl implements ComponentUsageRe
 
     }
 
-
-
-
     private class FormStoreRequestWrapper extends SlingHttpServletRequestWrapper {
         private ResourceResolver resolver;
 

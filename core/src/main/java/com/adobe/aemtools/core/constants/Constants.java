@@ -5,7 +5,6 @@ public interface Constants {
     String REPORT_COMPONENTS = "reportComponents";
 
     /*   Pie Chart Parameters Constants*/
-
     String PIE_CHART_NAME = "name";
     String PIE_CHART_Y = "y";
 
@@ -15,13 +14,6 @@ public interface Constants {
     String COMPONENT_USAGE = "usage";
     String PAGE_NAME = "pageName";
     String PAGE_PATH = "pagePath";
-
-    /* REPORT CREATION WIZARD CONSTANTS*/
-
-/*    String CREATIONWIZARD_PATH = "Path";
-    String CREATIONWIZARD_RESOURCETYPE = "resourceType";
-    String CREATIONWIZARD_COMPONENT_USAGE = "componentUsage";*/
-
 
     String CREATIONWIZARD_GET_USED_COMPONENT_LIST = "getcomponent";
     String CREATIONWIZARD_EXCLUDECHIDLRENPAGE = "excludeChildrenPages";
