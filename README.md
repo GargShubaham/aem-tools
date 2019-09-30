@@ -36,10 +36,16 @@ Or to deploy only the bundle to the author, run
 
     mvn clean install -PautoInstallBundle
 
-## Maven settings
+## Alternatively, Install package directly
+    [aemtools.component.usage.audit.manager-1.0-SNAPSHOT.zip](https://github.com/GargShubaham/aem-tools/files/3669161/aemtools.component.usage.audit.manager-1.0-SNAPSHOT.zip)
+    
+## Compatibilty
+Developer on AEM 6.5.
+Tested and working fine on
+AEM 6.5 and 6.4.
+If you need it for lesser vesion. Make changes in POM accordingly or let me know by raising an issue :).
 
-The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
-
-    http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
+    
+    
 
 
