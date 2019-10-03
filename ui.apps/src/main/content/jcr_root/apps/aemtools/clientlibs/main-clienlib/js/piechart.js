@@ -1,5 +1,5 @@
 $(function () {
-      var wait = document.querySelector('#report-viewer-loader');
+      var wait = $("body").find("coral-wait");
      if (wait) {
       wait.hide();
      }
