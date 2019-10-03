@@ -12,7 +12,7 @@ $(function () {
     if (dialog) {
 		document.body.appendChild(dialog);
     }
-     var wait = document.querySelector('#report-creation-loader');
+     var wait = $("body").find("coral-wait");
      if (wait) {
       wait.hide();
      }
